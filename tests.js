@@ -5,7 +5,12 @@ describe("Variables en JS", () => {
     it("Completa todas las constantes que faltan", () => {
 
         const a = 10;
-
+        const b = 1.34;
+        const c = true;
+        const d = "Buenos días"
+        const e = "Pepe"
+        const f = "Buenos días, pepe"
+               
         expect(a).to.equal(10);
         expect(b).to.equal(1.34);
         expect(c).to.equal(true);
@@ -17,26 +22,38 @@ describe("Variables en JS", () => {
     it("Completa todas las variables que faltan para que las operaciones resulten correctamente", () => {
 
         let a = 11;
+        let b = 0.34;
+        let c = 10;
+        let d = 100;
+        let e = 440;
+        let f = 10;
+        let g = 3;
+        let x = 4;
+        let y = 5;
 
         expect(a + b).to.equal(11.34);
         expect(a * c).to.equal(110);
         expect(d - e).to.equal(-340);
         // investiga para qué sirven los operadores ** y %
         expect(f ** g).to.equal(1000);
-        expect(x % 2).to.equal(0);
+        expect(x % 2).to.equal(0);/*operador modulo, segun el residuo da 0 si es par o 1 si es impar */
         expect(y % 2).to.equal(1);
     })
 
     it("Completa todas las variables que faltan para que se cumplan las condiciones", () => {
 
         let a = 10;
+        let b = 100;
+        let c = undefined;
+        let d = "hello";
+        let n = "b";
 
         expect(a > 9).to.be.true;
         expect(a < 11).to.be.true;
         expect(b === 100).to.be.true;
         expect(c === undefined).to.be.true;
         expect(d !== "Hello").to.be.true;
-        expect(n.startsWith('A')).to.be.false;
+        expect(n.startsWith('A')).to.be.false;/*no puede empezar con A mayuscula */
     })
 })
 
@@ -53,7 +70,7 @@ describe("condicionales en javascript", () => {
         }
 
         // substituye ??? por el valor que tiene la variable "result"        
-        expect(result === "???").to.be.true;
+        expect(result === "KO").to.be.true;
     })
 
     it("comparando cadenas (strings)", () => {
@@ -61,6 +78,7 @@ describe("condicionales en javascript", () => {
         let a = 'a';
         let b = 'b';
         let result;
+       /*es verdadero porque en el codigo ascii a es menor que b */
 
         if (a < b) {
             result = 'pikachu';
@@ -69,7 +87,7 @@ describe("condicionales en javascript", () => {
         }
 
         // substituye ??? por el valor que tiene la variable "result"        
-        expect(result === "???").to.be.true;
+        expect(result === 'pikachu').to.be.true;
     })
 
     it("Interpolación de cadenas (strings) (1)", () => {
@@ -86,7 +104,7 @@ describe("condicionales en javascript", () => {
         }
 
         // substituye ??? por el valor que tiene la variable "result"        
-        expect(result === "???").to.be.true;
+        expect(result === "Pizza con Pepperoni").to.be.true;
     })
 
     it("Interpolación de cadenas (strings) (2)", () => {
@@ -103,7 +121,7 @@ describe("condicionales en javascript", () => {
         }
 
         // substituye ??? por el valor que tiene la variable "result"        
-        expect(result === "???").to.be.true;
+        expect(result === "Pizza con Piña").to.be.true;
     })
 })
 
@@ -130,14 +148,14 @@ describe("Funciones en JS", () => {
             return "very long";
         }
     }
-
+/*favor explicarme este ejercio que no se de donde sale el 28.*/
     it("Cuál es el resultado de invocar la función? (1)", () => {
 
         let result = f(10, 30, 2);
 
 
         // substituye "???" por el valor que tiene la variable "result"        
-        expect(result === "???").to.be.true;
+        expect(result === 28 ).to.be.true;
     })
 
     it("Cuál es el resultado de invocar la función? (2)", () => {
@@ -146,17 +164,20 @@ describe("Funciones en JS", () => {
 
 
         // substituye "???" por el valor que tiene la variable "result"        
-        expect(result === "???").to.be.true;
+        expect(result === "Son Pinky y Cerebro").to.be.true;
     })
 
     it("Cuál es el resultado de invocar la función? (3)", () => {
 
         // substituye "???" por el resultado en cada caso
-        expect(h("khaleesi mother of dragons breaker of chains") === "???").to.be.true;
-        expect(h("sarah") === "???").to.be.true;
-        expect(h("bob") === "???").to.be.true;
-        expect(h("robertson") === "???").to.be.true;
+        expect(h("khaleesi mother of dragons breaker of chains") === "very long").to.be.true;
+        expect(h("sarah") === "adecquate").to.be.true;
+        expect(h("bob") === "too short").to.be.true;
+        expect(h("robertson") === "long").to.be.true;
     })
 
 })
 
+/*var  Exercise1="in My favorite dessert is jello"
+document.write("<P>The index of the first  from the beginning is " +
+    Exercise1.indexOf("j"))*/
